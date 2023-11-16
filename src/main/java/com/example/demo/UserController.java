@@ -3,9 +3,7 @@ package com.example.demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
@@ -34,7 +32,39 @@ public class UserController {
     @GetMapping
     public String getUser(){
         System.out.println(user);
-        System.out.println(user.name + user.age + user.tel);
+        System.out.println(user.name + user.age);
         return name + age + tel;
     }
+
+    @RequestMapping("/json")
+    public UserM second(){
+        UserM u = new UserM();
+        u.setName("小明");
+        u.setAge(30);
+        u.setGender("女");
+        return u;
+    }
+
+    @GetMapping("1")
+    public String third(String name, Integer age){
+        System.out.println(name);
+        System.out.println(age);
+        return name + age.toString();
+    }
+
+    @GetMapping("2")
+    public UserM getParam(UserM user){
+        System.out.println(user);
+        // 将接收到的参数直接返回
+        return user;
+    }
+
+    // 注意，User中一定要有无参构造方法
+    @PostMapping("postJson")
+    public UserM postJson(@RequestBody UserM user){
+        return user;
+    }
+
+
+
 }
