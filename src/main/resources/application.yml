@@ -1,0 +1,12 @@
+server:
+  port: 8181
+
+#自定义
+usermodel:
+  name: Noahaaaaa
+  age: 小明
+  tel: 9999
+  arr:
+    -a
+    -aaaa
+    -hdhdhdd
