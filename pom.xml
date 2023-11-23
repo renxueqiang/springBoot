@@ -41,7 +41,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.43</version>
+            <version>8.0.28</version>
         </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -59,7 +59,13 @@
             <version>3.5.4</version>
         </dependency>
 
-
+        <!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.2.20</version>
+        </dependency>
+        
     </dependencies>
 
     <build>
@@ -89,4 +95,7 @@ spring-boot-starter-parent中定义了若干依赖管理
 1，开发SpringBoot程序需要导入坐标时通常导入对应的starter
 2.每个不同的starter根据功能不同，通常包含多个依赖坐标
 3，使用starter可以实现快速配置的效果，达到简化配置的目的
+
+整合Druid需要导入Druid对应的starter
+整合第三方技术通用方式 1.导入对应的starter 2.根据提供的配置格式 配置非默认值对应的配置项
 -->

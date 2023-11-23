@@ -2,19 +2,15 @@ package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.context.annotation.Configuration;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
-    private final UserM user;
+    private final HomeModel user;
 
     @Autowired
-    public UserController(UserM userRepository) {
+    public UserController(HomeModel userRepository) {
         this.user = userRepository;
     }
 
@@ -36,8 +32,8 @@ public class UserController {
     }
 
     @RequestMapping("/json")
-    public UserM second(){
-        UserM u = new UserM();
+    public HomeModel second(){
+        HomeModel u = new HomeModel();
 //        u.setName("小明");
 //        u.setAge("30");
 //        u.setGender("女");
@@ -52,7 +48,7 @@ public class UserController {
     }
 
     @GetMapping("2")
-    public UserM getParam(UserM user){
+    public HomeModel getParam(HomeModel user){
         System.out.println(user);
         // 将接收到的参数直接返回
         return user;
@@ -60,7 +56,7 @@ public class UserController {
 
     // 注意，User中一定要有无参构造方法
     @PostMapping("postJson")
-    public UserM postJson(@RequestBody UserM user){
+    public HomeModel postJson(@RequestBody HomeModel user){
         return user;
     }
 

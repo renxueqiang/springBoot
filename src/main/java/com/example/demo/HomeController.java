@@ -13,14 +13,14 @@ public class HomeController {
     private Environment env;
 
     @Autowired
-    private UserM user;
+    private HomeModel user;
     @GetMapping("/")
     public String hello() {
         //第一种读取方式
-        System.out.println("hahhaha1"+env.getProperty("usermodel.name"));
+        System.out.println("第一种方式Environment:"+env.getProperty("usermodel.name"));
 
         //第二种读取方式
-        System.out.println(user);
+        System.out.println("第二种方式ConfigurationProperties:"+ user);
 
         //第三种读取方式   @Value("${usermodel.name}")
 
