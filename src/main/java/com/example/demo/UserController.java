@@ -27,8 +27,7 @@ public class UserController {
     @Value("${usermodel.tel}")
     public String tel;
 
-    @Value("${usermodel.arr}")
-    public List<String> arr;
+
     @GetMapping
     public String getUser(){
         System.out.println(user);
@@ -39,9 +38,9 @@ public class UserController {
     @RequestMapping("/json")
     public UserM second(){
         UserM u = new UserM();
-        u.setName("小明");
-        u.setAge(30);
-        u.setGender("女");
+//        u.setName("小明");
+//        u.setAge("30");
+//        u.setGender("女");
         return u;
     }
 

@@ -1,12 +1,11 @@
 server:
   port: 8181
+#  servlet:
+#    context-path: /test
 
 #自定义
 usermodel:
   name: Noahaaaaa
-  age: 小明
+  age: xiaoming
   tel: 9999
-  arr:
-    -a
-    -aaaa
-    -hdhdhdd
+  gender: 男

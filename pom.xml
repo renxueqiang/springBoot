@@ -27,10 +27,36 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
-            <version>5.3.8</version>
+        </dependency>
+
+        <!-- lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
         </dependency>
 
     </dependencies>
@@ -50,3 +76,16 @@
     </build>
 
 </project>
+
+
+<!--
+//parent
+springboot程序要继承 spring-boot-starter-parent
+spring-boot-starter-parent中定义了若干依赖管理
+继承parent可以避免使用相同技术出现依赖版本冲突
+
+//starter
+1，开发SpringBoot程序需要导入坐标时通常导入对应的starter
+2.每个不同的starter根据功能不同，通常包含多个依赖坐标
+3，使用starter可以实现快速配置的效果，达到简化配置的目的
+-->
