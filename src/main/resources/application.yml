@@ -6,12 +6,14 @@ server:
 #开发环境配置
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useSSL=false
+    name: druid
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8&serverTimezone=UTC&useSSL=false
     username: root
     password: rxq123456
-  jpa:
-    database-platform: org.hibernate.dialect.MySQL5Dialect
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#  jpa:
+#    database-platform: org.hibernate.dialect.MySQL5Dialect
 
 #    hibernate:
 #     ddl-auto: update #将数据库表结构与实体类同步，还可以设置为none和create；当设置为create时，则每次运行服务都重新创建数据库表
@@ -23,3 +25,4 @@ usermodel:
   age: xiaoming
   tel: 9999
   gender: 男
+

@@ -18,7 +18,7 @@ public class Demo1Application {
      ConfigurableApplicationContext ctx = SpringApplication.run(Demo1Application.class, args);
 
         HomeController bena = ctx.getBean(HomeController.class);
-        System.out.println("hahahhah----"+bena);
+        System.out.println("已启动获取Home的bena对象:-------->"+bena);
     }
 
 }
