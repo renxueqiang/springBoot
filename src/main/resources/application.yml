@@ -19,10 +19,18 @@ spring:
 #     ddl-auto: update #将数据库表结构与实体类同步，还可以设置为none和create；当设置为create时，则每次运行服务都重新创建数据库表
 #    show-sql: true  #在控制台和日志中输出sql语句
 
+
+
 #自定义
 usermodel:
   name: Noahaaaaa
   age: xiaoming
   tel: 9999
   gender: 男
-
+mybatis-plus:
+  global-config:
+    db-config:
+#      table-prefix: tbl_
+      id-type: auto
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
