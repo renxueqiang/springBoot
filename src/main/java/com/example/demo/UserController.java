@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/user")
@@ -13,14 +14,14 @@ public class UserController {
     private UserService service;
 
     @GetMapping("/{id}")
-    public User getById(@PathVariable Integer id) {
-        return service.getById(id);
+    public R getById(@PathVariable Integer id) {
+        return new R(true,service.getById(id));
     }
 
 
-    @GetMapping
-    public List<User> getAll() {
-        return service.list();
+    @GetMapping ("/all")
+    public  R getAll() {
+        return new R(true,service.list());
     }
 
 
